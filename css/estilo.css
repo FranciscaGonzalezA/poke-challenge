@@ -36,6 +36,7 @@
 .redireccion {
   display: inline-block;
   width: 15em;
+  height: max-content;
   margin: 2vh;
   padding: 10px 20px;
   background-color: var(--type-electric);
@@ -226,8 +227,10 @@ h1 {
 /* estilo para tablas */
 
 table {
-  width: 90%;
-  margin: 2% 5% 5% 5%;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   border-collapse: collapse;
 }
 
@@ -257,6 +260,8 @@ table th {
 #pokemonList {
   list-style: none;
   padding: 0;
+  margin-right: 5%;
+  margin-left: 5%;
   text-align: center;
 }
 
@@ -267,6 +272,40 @@ table th {
   font-size: 18px;
   font-weight: bold;
   color: rgb(255, 204, 0);
-  background-color: #3c59e7; /* Color de fondo inspirado en Pokémon */
+  background-color: #3c59e7; 
   border-radius: 5px;
+}
+
+.pagina-hm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btnFiltrar {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--type-electric); /* Color de fondo inspirado en Pikachu */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#btnFiltrar:hover {
+  background-color: #f9be0b; /* Cambia el color de fondo al pasar el mouse */
+}
+
+#btnFiltrar:focus {
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(255, 203, 5, 0.8); /* Efecto de resaltado al enfocar el botón */
+}
+
+#btnFiltrar:active {
+  transform: translateY(1px); /* Efecto de presionado */
 }
