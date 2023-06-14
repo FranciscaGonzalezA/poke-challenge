@@ -7,6 +7,9 @@ Para ver la página existen 2 opciones:
 - Clonar el repositorio
 - Verlo desde Github con Github Pages. En la barra derecha que se ve en el repositorio localizar **Enviroments** y luego presionar *github-pages*.
 
+
+## En que consiste la página
+
 La página consta de una página de inicio, con 4 botones: 
 
 1. **Contador de Pokémon que incluyen la letra "c" en su nombre**
