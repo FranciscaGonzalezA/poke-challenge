@@ -240,3 +240,33 @@ table th {
   background-color: #f2f2f2;
 }
 
+
+/* estilo de header para páginas secundarias */
+
+.header-secundario {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-secundario nav img {
+  width: 200px;
+}
+
+/* estilo página HM */
+
+#pokemonList {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#pokemonList li {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(255, 204, 0);
+  background-color: #3c59e7; /* Color de fondo inspirado en Pokémon */
+  border-radius: 5px;
+}
