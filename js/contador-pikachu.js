@@ -12,3 +12,25 @@ async function obtenerLocalizacionesPikachu() {
     return [];
   }
 }
+
+async function mostrarLocalizacionesPikachu() {
+  const localizaciones = await obtenerLocalizacionesPikachu();
+
+  const localizacionesTable = document.getElementById('localizaciones-table');
+
+  if (localizaciones.length > 0) {
+    const tableBody = document.createElement('tbody');
+    localizaciones.forEach((localizacion, index) => {
+      const row = tableBody.insertRow(index);
+      const numberCell = row.insertCell(0);
+      const locationCell = row.insertCell(1);
+      numberCell.textContent = index + 1;
+      locationCell.textContent = localizacion;
+    });
+    localizacionesTable.appendChild(tableBody);
+  } else {
+    localizacionesTable.textContent = 'No se encontraron localizaciones de Pikachu.';
+  }
+}
+
+mostrarLocalizacionesPikachu();
