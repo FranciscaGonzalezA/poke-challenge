@@ -17,42 +17,44 @@
     </nav>
     <a class="redireccion" href="./">Página Principal</a>
   </header>
-  <h1>Filtrado de Pokémon por Hidden Machine</h1>
+  <main class="pagina-hm">
+    <h1>Filtrado de Pokémon por Hidden Machine</h1>
 
-  <div>
-    <label>Selecciona una o varias HM:</label>
-    <div id="hmContainer">
-      <input type="checkbox" id="hm1" value="cut">
-      <label for="hm1">HM01 - Cut</label>
-      <br>
-      <input type="checkbox" id="hm2" value="fly">
-      <label for="hm2">HM02 - Fly</label>
-      <br>
-      <input type="checkbox" id="hm3" value="surf">
-      <label for="hm3">HM03 - Surf</label>
-      <br>
-      <input type="checkbox" id="hm4" value="strength">
-      <label for="hm4">HM04 - Strength</label>
-      <br>
-      <input type="checkbox" id="hm5" value="flash">
-      <label for="hm5">HM05 - Flash</label>
-      <br>
-      <input type="checkbox" id="hm6" value="rock-smash">
-      <label for="hm6">HM06 - Rock Smash</label>
-      <br>
-      <input type="checkbox" id="hm7" value="waterfall">
-      <label for="hm7">HM07 - Waterfall</label>
-      <br>
-      <input type="checkbox" id="hm8" value="dive">
-      <label for="hm8">HM08 - Dive</label>
+    <div class="ckbox-container">
+      <label>Selecciona una o varias HM:</label>
+      <div id="hmContainer">
+        <input type="checkbox" id="hm1" value="cut">
+        <label for="hm1">HM01 - Cut</label>
+        <br>
+        <input type="checkbox" id="hm2" value="fly">
+        <label for="hm2">HM02 - Fly</label>
+        <br>
+        <input type="checkbox" id="hm3" value="surf">
+        <label for="hm3">HM03 - Surf</label>
+        <br>
+        <input type="checkbox" id="hm4" value="strength">
+        <label for="hm4">HM04 - Strength</label>
+        <br>
+        <input type="checkbox" id="hm5" value="flash">
+        <label for="hm5">HM05 - Flash</label>
+        <br>
+        <input type="checkbox" id="hm6" value="rock-smash">
+        <label for="hm6">HM06 - Rock Smash</label>
+        <br>
+        <input type="checkbox" id="hm7" value="waterfall">
+        <label for="hm7">HM07 - Waterfall</label>
+        <br>
+        <input type="checkbox" id="hm8" value="dive">
+        <label for="hm8">HM08 - Dive</label>
+      </div>
+      <button id="btnFiltrar">Filtrar Pokémon</button>
     </div>
-    <button id="btnFiltrar">Filtrar Pokémon</button>
-  </div>
 
-  <ul id="pokemonList"></ul>
+    <ul id="pokemonList"></ul>
+  </main>
 
   <script src="./js/hidden.js"></script>
-  
+
 </body>
 
 </html>
