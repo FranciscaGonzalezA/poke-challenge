@@ -80,6 +80,9 @@
     display: flex;
     flex-direction: column;
   }
+  .header-principal .nav img {
+    width: 300px;
+  }
 }
 
 /* estilo de botones filtro por tipo */
