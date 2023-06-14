@@ -7,7 +7,7 @@
   --type-fire: #F08030;
   --type-water: #6890F0;
   --type-grass: #78C850;
-  --type-electric: #F8D030;
+  --type-electric: #FFCB05;
   --type-ice: #98D8D8;
   --type-fighting: #C03028;
   --type-poison: #A040A0;
@@ -26,7 +26,58 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: bnone;
   list-style: none;
   box-sizing: border-box;
+}
+
+.redireccion {
+  display: inline-block;
+  width: 15em;
+  margin: 2vh;
+  padding: 10px 20px;
+  background-color: var(--type-electric);
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: var(--clr-black) solid;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.redireccion:hover {
+  background-color: #f4f023;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Estilo de página principal */
+
+.pagina-principal {
+  display: flex;
+  padding: 5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-principal {
+  margin-bottom: 4rem;
+}
+.header-principal .nav img {
+  width: 400px;
+}
+
+@media screen and (max-width: 700px) {
+  .botones {
+    display: flex;
+    flex-direction: column;
+  }
 }
