@@ -19,34 +19,46 @@
   </header>
   <a class="redireccion" href="./index.html">Página Principal</a>
   <main>
-    <section id="filtro-tipo">
-      <ul class="tipos">
-        <li class="item"><button class="btn btn-header" id="ver-todos">Ver todos</button></li>
-        <li class="item"><button class="btn btn-header normal" id="normal">Normal</button></li>
-        <li class="item"><button class="btn btn-header fire" id="fire">Fuego</button></li>
-        <li class="item"><button class="btn btn-header water" id="water">Agua</button></li>
-        <li class="item"><button class="btn btn-header grass" id="grass">Planta</button></li>
-        <li class="item"><button class="btn btn-header electric" id="electric">Eléctrico</button></li>
-        <li class="item"><button class="btn btn-header ice" id="ice">Hielo</button></li>
-        <li class="item"><button class="btn btn-header fighting" id="fighting">Lucha</button></li>
-        <li class="item"><button class="btn btn-header poison" id="poison">Veneno</button></li>
-        <li class="item"><button class="btn btn-header ground" id="ground">Tierra</button></li>
-        <li class="item"><button class="btn btn-header flying" id="flying">Volador</button></li>
-        <li class="item"><button class="btn btn-header psychic" id="psychic">Psíquico</button></li>
-        <li class="item"><button class="btn btn-header bug" id="bug">Bicho</button></li>
-        <li class="item"><button class="btn btn-header rock" id="rock">Roca</button></li>
-        <li class="item"><button class="btn btn-header ghost" id="ghost">Fantasma</button></li>
-        <li class="item"><button class="btn btn-header dark" id="dark">Oscuro</button></li>
-        <li class="item"><button class="btn btn-header dragon" id="dragon">Dragón</button></li>
-        <li class="item"><button class="btn btn-header steel" id="steel">Acero</button></li>
-        <li class="item"><button class="btn btn-header fairy" id="fairy">Hada</button></li>
-      </ul>
-    </section>
-    <div id="todos">
-      <div class="pokemon-todos" id="listaPokemon">
+    <h1>Filtrado de Pokémon por Tipo</h1>
 
+    <div>
+      <label>Selecciona un tipo:</label>
+      <div id="tipoContainer">
+        <button class="tipoBtn" id="normal" data-tipo="normal">Normal</button>
+        <button class="tipoBtn" id="fire" data-tipo="fire">Fuego</button>
+        <button class="tipoBtn" id="water" data-tipo="water">Agua</button>
+        <button class="tipoBtn" id="electric" data-tipo="electric">Eléctrico</button>
+        <button class="tipoBtn" id="grass" data-tipo="grass">Planta</button>
+        <button class="tipoBtn" id="ice" data-tipo="ice">Hielo</button>
+        <button class="tipoBtn" id="fighting" data-tipo="fighting">Lucha</button>
+        <button class="tipoBtn" id="poison" data-tipo="poison">Veneno</button>
+        <button class="tipoBtn" id="ground" data-tipo="ground">Tierra</button>
+        <button class="tipoBtn" id="flying" data-tipo="flying">Volador</button>
+        <button class="tipoBtn" id="psychic" data-tipo="psychic">Psíquico</button>
+        <button class="tipoBtn" id="bug" data-tipo="bug">Bicho</button>
+        <button class="tipoBtn" id="rock" data-tipo="rock">Roca</button>
+        <button class="tipoBtn" id="ghost" data-tipo="ghost">Fantasma</button>
+        <button class="tipoBtn" id="dragon" data-tipo="dragon">Dragón</button>
+        <button class="tipoBtn" id="dark" data-tipo="dark">Oscuro</button>
+        <button class="tipoBtn" id="steel" data-tipo="steel">Acero</button>
+        <button class="tipoBtn" id="fairy" data-tipo="fairy">Hada</button>
       </div>
     </div>
+
+    <table id="pokemonTable">
+      <thead>
+        <tr>
+          <th>Número en la Pokédex</th>
+          <th>Nombre</th>
+          <th>Tipo 1</th>
+          <th>Tipo 2</th>
+          <th>Altura</th>
+          <th>Peso</th>
+        </tr>
+      </thead>
+      <tbody id="pokemonBody"></tbody>
+    </table>
+
 
   </main>
 

@@ -1,69 +1,49 @@
-const listaPokemon = document.querySelector("#listaPokemon");
-const botonesHeader = document.querySelectorAll(".btn-header");
-let URL = "https://pokeapi.co/api/v2/pokemon/";
+const tipoButtons = document.querySelectorAll('.tipoBtn');
+tipoButtons.forEach(button => button.addEventListener('click', filtrarPokemonPorTipo));
 
-for (let i = 1; i <= 1010; i++) {
-  fetch(URL + i)
-    .then((response) => response.json())
-    .then(data => mostrarPokemon(data))
+async function filtrarPokemonPorTipo(event) {
+  try {
+    const tipo = event.target.dataset.tipo;
+
+    const response = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
+    const data = await response.json();
+    const pokemonList = data.pokemon;
+
+    const pokemonTableBody = document.getElementById('pokemonBody');
+    pokemonTableBody.innerHTML = '';
+
+    for (const pokemon of pokemonList) {
+      try {
+        const pokemonData = await obtenerPokemonData(pokemon.pokemon.url);
+        if (pokemonData.id > 1010) continue;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${pokemonData.id}</td>
+          <td>${pokemonData.name}</td>
+          <td>${pokemonData.types[0].type.name}</td>
+          <td>${pokemonData.types[1] ? pokemonData.types[1].type.name : '-'}</td>
+          <td>${pokemonData.height}</td>
+          <td>${pokemonData.weight}</td>
+        `;
+
+        pokemonTableBody.appendChild(row);
+      } catch (error) {
+        console.error('Error al obtener los datos del Pokémon:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Error al filtrar Pokémon por tipo:', error);
+  }
 }
 
-function mostrarPokemon(poke) {
-
-  let tipos = poke.types.map((type) => `<p class="${type.type.name} tipo">${type.type.name}</p>`);
-  tipos = tipos.join('');
-
-  let pokeId = poke.id.toString();
-  if (pokeId.length === 1) {
-    pokeId = "00" + pokeId;
-  } else if (pokeId.length === 2) {
-    pokeId = "0" + pokeId;
+async function obtenerPokemonData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos del Pokémon:', error);
+    throw error;
   }
-
-
-  const div = document.createElement("div");
-  div.classList.add("pokemon");
-  div.innerHTML = `
-        <p class="pokemon-id-back">#${pokeId}</p>
-        <div class="pokemon-imagen">
-            <img src="${poke.sprites.other["official-artwork"].front_default}" alt="${poke.name}">
-        </div>
-        <div class="pokemon-info">
-            <div class="nombre-contenedor">
-                <p class="pokemon-id">#${pokeId}</p>
-                <h2 class="pokemon-nombre">${poke.name}</h2>
-            </div>
-            <div class="pokemon-tipos">
-                ${tipos}
-            </div>
-            <div class="pokemon-stats">
-                <p class="stat">${poke.height}m</p>
-                <p class="stat">${poke.weight}kg</p>
-            </div>
-        </div>
-    `;
-  listaPokemon.append(div);
 }
-
-botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
-  const botonId = event.currentTarget.id;
-
-  listaPokemon.innerHTML = "";
-
-  for (let i = 1; i <= 1010; i++) {
-    fetch(URL + i)
-      .then((response) => response.json())
-      .then(data => {
-
-        if (botonId === "ver-todos") {
-          mostrarPokemon(data);
-        } else {
-          const tipos = data.types.map(type => type.type.name);
-          if (tipos.some(tipo => tipo.includes(botonId))) {
-            mostrarPokemon(data);
-          }
-        }
-
-      })
-  }
-}))
