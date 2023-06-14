@@ -23,8 +23,8 @@ async function filtrarPokemonPorTipo(event) {
           <td>${pokemonData.name}</td>
           <td>${pokemonData.types[0].type.name}</td>
           <td>${pokemonData.types[1] ? pokemonData.types[1].type.name : '-'}</td>
-          <td>${pokemonData.height}</td>
-          <td>${pokemonData.weight}</td>
+          <td>${pokemonData.height/10}m</td>
+          <td>${pokemonData.weight/10}kg</td>
         `;
 
         pokemonTableBody.appendChild(row);
